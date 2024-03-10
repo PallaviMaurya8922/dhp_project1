@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        #navbar {
+            height: 40px;
+            background-color: black;
+            border: 2px white solid;
+            margin-top: 0%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            align-content:;
+        }
+
+        body {
+            background-image: url("https://img.freepik.com/free-vector/earth-blue-wave-background_1017-36678.jpg");
+            background-size: 100%;
+            ;
+        }
+
+        #logo, #history-button {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 28px;
+            color: rgb(215, 121, 44);
+            margin-left: 50px;
+        }
+        #history-button{
+            margin-right: 50px;
+            text-decoration: none;
+            text-align: right;
+            float: right;
+            color: rgb(215, 121, 44) ;
+        }
+
+        .body-content {
+            margin-left: 15%;
+            margin-top: 8%;
+            height: 40%px;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        #alltext {
+            border-block: solid;
+            writing-mode: horizontal-tb;
+            block-size: 220px;
+            text-align: center;
+        }
+
+        #text {
+            margin-top: 20px;
+        }
+        #error{font-size: small;
+        color: crimson;
+        text-align: center;}
+
+        .welcome {
+            font-size: 35px;
+            text-decoration: solid;
+            color: brown;
+            margin-bottom: 20px;
+        }
+        #note{text-align: center;
+            margin-top: 12px;
+            font-size: small;}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="navbar">
+            <a href="/" id="logo">ExtractInfo</a>
+            <a href="/login" id="history-button">View History<br></a>
+        </div>
+    </header>
+    <main>
+        <div class="body-content">
+            <div id="welcome">
+                <p class="welcome">Welcome to ExtractInfo</p>
+            </div>
+            <div id="alltext">
+                <p id="text"> Enter URL and get relevent content.</p>
+                <br>
+
+                <form method='post' action="/submit">
+                    <label for="url"> Enter URL here:<br>
+                    <input type="url" name="url" placeholder="Enter URL" id="url" required></label>
+                    <button type="submit" id="submit"> Submit</button>
+                </form>
+                <p id="error">
+                {% if error_message!=none %}
+                {{ error_message }}
+                {% endif %}
+                </p>
+                <p id="note">NOTE:
+                <br>1. Only admins can view history.
+                <br>2. Website works only for The Times of India.
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

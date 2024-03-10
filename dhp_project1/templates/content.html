@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    body {
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR97ucqg-pRhieSmLp6EbaTT3ZFd3iyEP1uBA&usqp=CAU');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    .body-content {
+        display: flex;
+        width: 90%;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        text-align: justify;
+    }
+
+    .news_title {
+        margin-top: 25px;
+        width: 75%;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .news_content {
+        font-size: 18px;
+        width: 85%;
+    }
+    .title{text-align: center;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        color: rgb(80, 41, 116); 
+    }
+    #title1{font-size: 30px;}
+    #title2{font-size: 23px;
+    margin-top: 15px;}
+    .table1{
+        table-layout: fixed;
+        border-collapse: collapse;
+        margin: 0 auto;
+        border-color: rgb(110, 103, 188);
+        border-width: 1px;
+        width: 40%;
+    }
+    .upos_freq{
+        table-layout: fixed;
+        border-collapse: collapse;
+        border-color: rgb(110, 103, 188);
+        border-width: 1px;
+        width:75%;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+    td,td,thead{text-align: center;}
+
+</style>
+
+<body>
+    <div class='body-content'>
+        <div class="news_title">
+            <p style="font-size: 30px;"> {{ title_html }} </p>
+        </div>
+
+        <div class="news_content">
+            <br><br>
+            <p>{{ text_html }}</p>
+        </div>
+
+        <div class="summary_view" border="1">
+            <h5 class="title" id="title1">Summary View</h5>
+            <table class="table1" border="1">
+                <thead>  
+                    <tr>
+                        <th>No of Words</th>
+                        <th>No of Sentences</th>
+                        <th>No of Stop Words</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ words }}</td>
+                        <td>{{ sent }}</td>
+                        <td>{{ stop_wrd_count }}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <table class="upos_freq" border="1">
+                <h5 class="title" id="title2"> Frequency of Universal POS Tags </h5>
+                
+                <thead>
+                    <tr>
+                        {% for key in upos_frequency.keys() %}
+                        <th>{{ key }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for value in upos_frequency.values() %}
+                        <td>{{ value }}</td>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

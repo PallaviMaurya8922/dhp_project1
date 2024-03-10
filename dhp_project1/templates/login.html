@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0%;
+        padding: 0%;}
+        body{
+            background-image: url('https://c2.vanceai.com/posts/16221731186022243-FeatBlueWhiteBackground.jpg');
+            background-size: 100%;
+            width:100%;
+            background-repeat: no-repeat;
+            font-size: 24px;
+        }
+        .body-content{
+            height: 300px;
+            width: 400px;
+            border: 2px;
+            border-radius: 5px;
+            border-style: solid;
+            border-color: rgb(198, 157, 157);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-top:200px;
+            margin-left: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+        .caption{font-size: 30px;
+            color: rgb(65, 3, 3);
+            margin-bottom: 20px;
+        }
+        .error_message{color:red;
+        margin-top: 25px;
+    }
+        #button{margin-top: 15px;
+            height:20px;
+        }
+        #password{
+            height: 20px;
+        }
+        .password-label{
+            margin-bottom: 20px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="body-content">
+        <div class="caption"> Only admin can view History.</div>
+        <div class="form">
+            <form method="post" action="/history">
+                <label for="password">
+                    <p id="password-label">Enter password here:</p>
+                </label>
+                <br>
+                <input type="password" placeholder="Password" name="password" id="password">
+               <br>
+                <button type="submit" id="button">Submit</button>
+            </form>
+        </div>
+        <div class="error_message">
+            {% if error_message %}
+            {{ error_message }}
+            {% endif %}
+        </div>
+
+    </div>
+</body>
+
+</html>

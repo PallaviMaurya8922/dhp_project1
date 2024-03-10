@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            text-align: center;
+            color:rgb(10, 3, 61);
+        }
+        th{
+            color:brown;
+        }
+        #logo{
+            text-decoration: none;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="/" id="logo">Back to homepage</a>
+        <div>
+            <h1 class="title">Search History</h1>
+            <table border="1">
+                <tr>
+                    <th>Sr.</th>
+                    <th>URL</th>
+                    <th>Text</th>
+                    <th>No. of Words</th>
+                    <th>No. of Sentences</th>
+                    <th>No of Stop Words</th>
+                    <th>POS Frequency</th>
+                </tr>
+                {% for i in data_html %}
+                <tr>
+                    {% for j in i%}
+                    <td> {{ j }} </td>
+                    {% endfor %}
+                    {% endfor %}
+                </tr>
+        </div>
+        </table>
+    </div>
+
+</body>
+
+</html>
