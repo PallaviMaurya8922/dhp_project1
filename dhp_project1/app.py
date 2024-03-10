@@ -9,7 +9,7 @@ Password='Pallavi'
 app = Flask(__name__, static_folder="/var/data/")
 
 conn = psycopg2.connect(
-host="localhost",database="dhp2024",user='postgres',password='#Pallavi@786')
+host="dpg-cnmu59a1hbls739ikbcg-a",database="pallavi",user='pallavi_user',password='0iaVGe9gNF9ozNxqnV8CrMw5Tj5WWH0O',port='5432')
 cur=conn.cursor()
 
 cur.execute('create table if not exists history(id SERIAL PRIMARY KEY, URL varchar, input_text TEXT, word_count INTEGER, sentence_count INTEGER, stop_word_count INTEGER, upos_frequency varchar(1000))')
