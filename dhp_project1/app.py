@@ -4,6 +4,9 @@ import json
 import psycopg2
 from bs4 import BeautifulSoup
 import requests
+nltk.download('universal_tagset')
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
 
 Password='Pallavi'
 app = Flask(__name__, static_folder="/var/data/")
