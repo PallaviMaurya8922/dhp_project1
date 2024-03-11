@@ -4,6 +4,7 @@ import json
 import psycopg2
 from bs4 import BeautifulSoup
 import requests
+nltk.download('stopwords')
 nltk.download('universal_tagset')
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
